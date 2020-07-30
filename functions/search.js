@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     .then((response) => response.json())
     .catch((error) => console.error(error));
 
-  const firstResult = response.results[0];
+  const firstResult = response.results[Math.floor(Math.random() * response.results.length)];
 
   return {
     statusCode: 200,
