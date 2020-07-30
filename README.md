@@ -32,22 +32,13 @@ There is no server configure in backend. The front end search photo using unspla
     <a href="https://github.com/riteshprk/serverless-functions/issues">Request Feature</a>
   </p>
 
-## ✨ Features
-
-- Categories display and search
-- Quantity and Size selection
-- Modify cart
-- Discont coupon 
-- Payment method- Stripe and Paypal
-- Order confirmation and Order history
-- User account handling
 
 ## Tech Stack
 
 | Stack    | -                                                                                                  | -                                                                                                 | -                                                                                                 | 
 | -------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | 
 | FrontEnd | <p align="center"><img src="./media/html.png" width="100" height="100"> <br />HTML</p> | <p align="center"><img src="./media/css.png" width="100" height="100"> <br />CSS</p>  |  <p align="center"><img src="./media/js.png" width="100" height="100"> <br />JavaScript</p>  | 
-| BackEnd  | <p align="center"><img src="./media/python.png" width="100" height="100"> <br />Python</p>   | <p align="center"><img src="./media/django.png" width="100" height="100"> <br />Django</p> |
+| BackEnd  | <p>No backend :)</p>   | 
 
 
 ## :rocket: Quick start
