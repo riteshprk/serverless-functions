@@ -5,21 +5,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Search for Photo</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 
 </head>
 
 <body>
-  <section class="hero is-dark is-bold">
+  <section class="hero is-fullheight has-background-black">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">Search for Photo!!</h1>
+        <h1 class="title center">Search for Photo!!</h1>
         <form action='.netlify/functions/search' method="POST">
 
           <label for="query"></label>
-          <input class="input is-rounded" style="width:300px;" type="text" id="query" name="query" />
-          <div>
-            <button class="button is-link is-rounded mt-4 is-centered">Submit</button>
+          <div class="center">
+            <input class="input is-rounded center" style="max-width: 512px;" type="text" id="query" name="query" />
+          </div>
+          <div class="center" style="margin-top: 20px;">
+            <button class="button is-link is-rounded">Submit</button>
           </div>
         </form>
       </div>
