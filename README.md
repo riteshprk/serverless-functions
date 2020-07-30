@@ -42,42 +42,78 @@ There is no server configure in backend. The front end search photo using unspla
 
 
 ## :rocket: Quick start
+Create the project and function file
+On your computer, create a new folder for the functions to live in:
 
-Start developing locally.
-
-To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
-
+# create a new folder
 ```
-pip install virtualenv
-```
-
-Clone or download this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
-
-```
-virtualenv env
+mkdir serverless-functions
 ```
 
-That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
-
+# move into the new folder
 ```
-source env/bin/active
+cd serverless-functions/
+```
+Next, make a functions folder in the new folder:
+
+# create a directory called functions
+```
+mkdir functions
+```
+Inside the functions folder, create a new file called hello-world.js—this will be your serverless function:
+
+# create the file for your first serverless function
+```
+touch functions/hello-world.js
+```
+Inside hello-world.js, add the following code:
+```
+exports.handler = async () => {
+  return {
+    statusCode: 200,
+    body: 'Hello world!',
+  };
+};
 ```
 
-Then install the project dependencies with
+This is a complete serverless function. No joke. This JavaScript function returns an HTTP status code of 200 (for “OK”) and a plain text body of “Hello world!”
 
+Now that we’ve created the serverless function, let’s get set up to test it locally.
+
+Set up Netlify
+First, install the Netlify CLI on your computer and log in to make sure that you have access to your Netlify account:
+
+# install the Netlify CLI 
 ```
-pip install -r requirements.txt
+npm i -g netlify-cli 
 ```
 
-Now you can run the project with this command
-
+# log into your Netlify account 
 ```
-python manage.py runserver
+ntl login
 ```
+Note: If you don’t already have a Netlify account, you can set one up for free using your GitHub, GitLab, Bitbucket, or email address in a few seconds.
 
-**Note** if you want Stripe and Paypal payments to work you will need to enter your own Stripe API keys and Paypal account into the `.env` file in the settings files.
+Next, create netlify.toml at the root of your project:
+
+# create a Netlify config file in the project root 
+```
+touch netlify.toml
+```
+Inside netlify.toml, configure Netlify Functions by adding two lines of config:
+```
+[build]
+  functions = "functions"
+```
+This tells Netlify that you want to enable Netlify Functions and that it should look in the functions folder to find them. Once you’ve set this, Netlify will do the rest!
+
+Start the server
+You have access to a local development server called Netlify Dev that supports serverless functions. To run it, you’ll use the CLI:
+```
+ntl dev
+```
 
 
 ---
 
-Made with ❤️ and JS and Bulma
+Made with ❤️ and JS
